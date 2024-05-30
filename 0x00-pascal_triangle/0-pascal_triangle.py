@@ -1,6 +1,14 @@
 #!/usr/bin/python3
 
 def pascal_triangle(n):
+    """
+    Makes Pascal Pyramid, where a value is determined by the addition of
+    the same index in the previous layer, and the previous index of the
+    previous layer as well. The triangle is built top first.
+    args:
+        n: layers of triangle.
+    return: array of arrays, each array takes a whole horizontal layer.
+    """
     if n <= 0:
         return []
     output = []
@@ -17,4 +25,3 @@ def pascal_triangle(n):
                 line[j] = prev[j] + prev[j - 1]
         output.append(line)
     return output
-
