@@ -1,10 +1,26 @@
 #!/usr/bin/python3
 
 def canUnlockAll(boxes):
+    """
+    Wrapper function to call the main function.
+    Args:
+            boxes: array of arrays. each array insude represents a box
+    Return:
+            Boolean
+    """
     return singleBoxUnlocker(boxes, 0, [0])
 
 
 def singleBoxUnlocker(boxes, keyToBox, unlockedBoxes=[0]):
+    """
+    Main function to unlock all boxes
+    Args:
+            boxes: array of arrays. each array insude represents a box
+            keyToBox: the box to unlock and use the keys inside
+            unlockedBoxes: array of opened boxes keys to track completion
+    Return:
+            Boolean
+    """
     if len(unlockedBoxes) == len(boxes):
         return True
     if not boxes[keyToBox]:
