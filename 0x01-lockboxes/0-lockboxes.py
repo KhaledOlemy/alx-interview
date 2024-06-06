@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def canUnlockAll(boxes):
     """
     Wrapper function to call the main function.
