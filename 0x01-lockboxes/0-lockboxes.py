@@ -3,6 +3,7 @@
 Try to unlock all the boxes
 """
 
+
 def canUnlockAll(boxes):
     """
     Wrapper function to call the main function.
@@ -28,8 +29,8 @@ def singleBoxUnlocker(boxes, keyToBox, unlockedBoxes=[0]):
         return True
     if not boxes[keyToBox]:
         return False
-    if (len(boxes[keyToBox]) == 1 and keyToBox == boxes[keyToBox][0]):
-        return False
+    # if (len(boxes[keyToBox]) == 1 and keyToBox == boxes[keyToBox][0]):
+    #     return False
     for b in boxes[keyToBox]:
         if b != keyToBox:
             if b not in unlockedBoxes:
