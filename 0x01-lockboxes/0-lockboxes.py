@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+Try to unlock all the boxes
+"""
 
 def canUnlockAll(boxes):
     """
