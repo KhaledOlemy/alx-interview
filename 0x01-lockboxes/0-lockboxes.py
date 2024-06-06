@@ -32,7 +32,7 @@ def singleBoxUnlocker(boxes, keyToBox, unlockedBoxes=[0]):
     if (len(boxes[keyToBox]) == 1 and keyToBox == boxes[keyToBox][0]):
         return False
     for b in boxes[keyToBox]:
-        if b != keyToBox:
+        if b != keyToBox and b < len(boxes):
             if b not in unlockedBoxes:
                 unlockedBoxes.append(b)
                 singleBoxUnlocker(boxes, b, unlockedBoxes)
