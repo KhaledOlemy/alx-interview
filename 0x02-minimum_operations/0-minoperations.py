@@ -23,4 +23,6 @@ def minOperations(n):
         else:
             noOperations += 1
         currentCount += copier
+    if currentCount > n:
+        return 0
     return noOperations
