@@ -13,7 +13,7 @@ def minOperations(n):
     currentCount = 1
     copier = 1
     noOperations = 1
-    while (n > currentCount):
+    while n > currentCount:
         remainingCount = n - currentCount
         if remainingCount / (copier * 2) == remainingCount // (copier * 2):
             copier = copier * 2
