@@ -10,6 +10,8 @@ def minOperations(n):
     Compute the minimum number of operations (copy all - paste) required
     to achieve the number of Hs needed
     """
+    if n == 1:
+        return 0
     currentCount = 1
     copier = 1
     noOperations = 1
