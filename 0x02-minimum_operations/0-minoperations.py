@@ -6,7 +6,7 @@ Min Operations
 
 def minOperations(n: int) -> int:
     """
-    Min Operations
+    Min Operations - H copier
     """
     currentCount: int = 1  # initial H count
     copier: int = 1  # initial copier of the H (current count) in the file
