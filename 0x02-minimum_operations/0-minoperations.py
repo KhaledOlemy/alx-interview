@@ -12,14 +12,15 @@ def minOperations(n):
     """
     if not isinstance(n, int) or n <= 1:
         return 0
+
     currentCount = 2
     copier = 1
     noOperations = 2
     while n > currentCount:
         remainingCount = n - currentCount
         if remainingCount % currentCount == 0:
-            currentCount += copier
             copier = currentCount
+            currentCount += copier
             noOperations += 2
         else:
             currentCount += copier
