@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 """
-Min Operations
+Min Operations problem solving - interview preparations
 """
 
 
-def minOperations(n: int) -> int:
+def minOperations(n):
     """
     Min Operations - H copier
+    Compute the minimum number of operations (copy all - paste) required
+    to achieve the number of Hs needed
     """
-    currentCount: int = 1
-    copier: int = 1
-    noOperations: int = 1
+    currentCount = 1
+    copier = 1
+    noOperations = 1
     while (n > currentCount):
         remainingCount = n - currentCount
         if remainingCount / (copier * 2) == remainingCount // (copier * 2):
