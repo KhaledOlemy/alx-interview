@@ -28,15 +28,15 @@ statusCodeSummary = {
 try:
     inputLines = sys.stdin
     for line in inputLines:
-        line = line.split()[::-1]
+        line = line.split()
 
         if len(line) < 6:
             continue
         lineCounter += 1
 
         if lineCounter <= 10:
-            fileSize += int(line[0])
-            statusCode = line[1]
+            fileSize += int(line[-1])
+            statusCode = line[-2]
             if statusCode in allowedStatusCodes:
                 statusCodeSummary[statusCode] += 1
 
