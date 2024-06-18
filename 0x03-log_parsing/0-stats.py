@@ -25,29 +25,30 @@ statusCodeSummary = {
     "500": 0
 }
 
-try:
-    inputLines = sys.stdin
-    for line in inputLines:
-        line = line.split()
+if __name__ == "__main__":
+    try:
+        inputLines = sys.stdin
+        for line in inputLines:
+            line = line.split()
 
-        if len(line) < 6:
-            continue
-        lineCounter += 1
+            if len(line) < 6:
+                continue
+            lineCounter += 1
 
-        if lineCounter <= 10:
-            fileSize += int(line[-1])
-            statusCode = line[-2]
-            if statusCode in allowedStatusCodes:
-                statusCodeSummary[statusCode] += 1
+            if lineCounter <= 10:
+                fileSize += int(line[-1])
+                statusCode = line[-2]
+                if statusCode in allowedStatusCodes:
+                    statusCodeSummary[statusCode] += 1
 
-        if lineCounter == 10:
-            lineCounter = 0
-            print(f"File size: {fileSize}")
-            for k, v in statusCodeSummary.items():
-                if v != 0:
-                    print(f"{k}: {v}")
-except KeyboardInterrupt:
-    print(f"File size: {fileSize}")
-    for k, v in statusCodeSummary.items():
-        if v != 0:
-            print(f"{k}: {v}")
+            if lineCounter == 10:
+                lineCounter = 0
+                print(f"File size: {fileSize}")
+                for k, v in statusCodeSummary.items():
+                    if v != 0:
+                        print(f"{k}: {v}")
+    except KeyboardInterrupt:
+        print(f"File size: {fileSize}")
+        for k, v in statusCodeSummary.items():
+            if v != 0:
+                print(f"{k}: {v}")
