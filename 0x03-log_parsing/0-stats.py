@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""TRACK STDIN"""
 import sys
 
 fileSize = 0
