@@ -2,8 +2,8 @@
 """TRACK STDIN"""
 import sys
 
-fileSize = 0
 lineCounter = 0
+fileSize = 0
 allowedStatusCodes = [
     "200",
     "301",
@@ -47,7 +47,7 @@ if __name__ == "__main__":
                 for k, v in statusCodeSummary.items():
                     if v != 0:
                         print(f"{k}: {v}")
-    except KeyboardInterrupt:
+    finally:
         print(f"File size: {fileSize}")
         for k, v in statusCodeSummary.items():
             if v != 0:
