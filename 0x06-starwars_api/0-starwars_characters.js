@@ -10,16 +10,16 @@ if (process.argv.length > 2) {
     const charactersURL = JSON.parse(body).characters;
     const charactersNames = charactersURL.map(
       url => new Promise((resolve, reject) => {
-        request(url, (promiseError, __, charactersBody) => {
-          if (promiseError) {
-            reject(promiseError);
+        request(url, (promiseErr, __, charactersReqestBody) => {
+          if (promiseErr) {
+            reject(promiseErr);
           }
-          resolve(JSON.parse(charactersBody).name);
+          resolve(JSON.parse(charactersReqestBody).name);
         });
       }));
 
     Promise.all(charactersNames)
-      .then(characterNames => console.log(characterNames.join('\n')))
-      .catch(errors => console.log(errors));
+      .then(names => console.log(names.join('\n')))
+      .catch(errs => console.log(errs));
   });
 }
