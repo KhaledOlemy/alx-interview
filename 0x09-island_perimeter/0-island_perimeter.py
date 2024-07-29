@@ -10,7 +10,7 @@ def island_perimeter(grid: List) -> int:
     perimeter = 0
     for i, row in enumerate(grid):
         for j, col in enumerate(row):
-            if col == 1:
+            if col == 0:
                 continue
             to_check = []
             if j != len(row) - 1:
@@ -21,5 +21,5 @@ def island_perimeter(grid: List) -> int:
                 to_check.append(row[j-1])
             if i != 0:
                 to_check.append(grid[i-1][j])
-            perimeter += sum(to_check)
+            perimeter += sum([1 for item in to_check if item == 0])
     return perimeter
