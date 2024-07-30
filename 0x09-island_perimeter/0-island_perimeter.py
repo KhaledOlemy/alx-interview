@@ -6,6 +6,10 @@ land tiles"""
 
 
 def island_perimeter(grid):
+    """
+    Solve island perimeter problem
+    Get the surrounding water tiles next to
+    land tiles"""
     rows = 0
     cols = 0
     for row in grid:
