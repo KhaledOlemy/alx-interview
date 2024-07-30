@@ -5,7 +5,7 @@ Get the surrounding water tiles next to
 land tiles"""
 
 
-def island_perimeter(grid) -> int:
+def island_perimeter(grid):
     """
     Solve island perimeter problem
     Get the surrounding water tiles next to
@@ -13,7 +13,7 @@ def island_perimeter(grid) -> int:
     perimeter = 0
     for i, row in enumerate(grid):
         for j, col in enumerate(row):
-            if col == 0:
+            if col == 1:
                 continue
             to_check = []
             if j != len(row) - 1:
@@ -24,5 +24,5 @@ def island_perimeter(grid) -> int:
                 to_check.append(row[j-1])
             if i != 0:
                 to_check.append(grid[i-1][j])
-            perimeter += sum([1 for item in to_check if item == 0])
+            perimeter += sum(to_check)
     return perimeter
