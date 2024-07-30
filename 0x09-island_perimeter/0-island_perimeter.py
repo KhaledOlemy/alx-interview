@@ -3,10 +3,9 @@
 Solve island perimeter problem
 Get the surrounding water tiles next to
 land tiles"""
-from typing import List
 
 
-def island_perimeter(grid: List) -> int:
+def island_perimeter(grid) -> int:
     """
     Solve island perimeter problem
     Get the surrounding water tiles next to
