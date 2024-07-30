@@ -6,23 +6,21 @@ land tiles"""
 
 
 def island_perimeter(grid):
-    """
-    Solve island perimeter problem
-    Get the surrounding water tiles next to
-    land tiles"""
-    perimeter = 0
-    for i, row in enumerate(grid):
-        for j, col in enumerate(row):
-            if col == 1:
-                continue
-            to_check = []
-            if j != len(row) - 1:
-                to_check.append(row[j+1])
-            if i != len(grid) - 1:
-                to_check.append(grid[i+1][j])
-            if j != 0:
-                to_check.append(row[j-1])
-            if i != 0:
-                to_check.append(grid[i-1][j])
-            perimeter += sum(to_check)
-    return perimeter
+    rows = 0
+    cols = 0
+    for row in grid:
+        count = 0
+        for idx, i in enumerate(row):
+            if idx == 0 or idx > 0 and row[idx] != row[idx - 1]:
+                count += i
+        rows += count * 2
+    for i in range(len(grid[0])):
+        col = []
+        for item in grid:
+            col.append(item[i])
+        count = 0
+        for idx, i in enumerate(col):
+            if idx == 0 or idx > 0 and col[idx] != col[idx - 1]:
+                count += i
+        cols += count * 2
+    return rows + cols
