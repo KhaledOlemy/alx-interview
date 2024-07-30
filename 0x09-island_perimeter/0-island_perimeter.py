@@ -7,6 +7,10 @@ from typing import List
 
 
 def island_perimeter(grid: List) -> int:
+    """
+    Solve island perimeter problem
+    Get the surrounding water tiles next to
+    land tiles"""
     perimeter = 0
     for i, row in enumerate(grid):
         for j, col in enumerate(row):
