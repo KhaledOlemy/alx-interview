@@ -36,7 +36,8 @@ def isWinner(x, nums):
         return None
     maria_wins = 0
     ben_wins = 0
-    for round_num in nums:
+    for i in range(x):
+        round_num = nums[i]
         primes = generate_primes(round_num)
         current_player = 0  # 0 for Maria, 1 for Ben
         while primes:
