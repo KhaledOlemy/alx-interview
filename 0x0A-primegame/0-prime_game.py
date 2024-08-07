@@ -1,4 +1,9 @@
+#!/usr/bin/python3
+"""Prime game problem solution"""
+
+
 def is_prime(number):
+    """is prime checks for a number prime"""
     if number <= 1:
         return False
     if number <= 3:
@@ -14,6 +19,7 @@ def is_prime(number):
 
 
 def generate_primes(up_to):
+    """generate primes and checks"""
     prime_list = []
     is_prime_array = [True] * (up_to + 1)
     for num in range(2, up_to + 1):
@@ -25,6 +31,7 @@ def generate_primes(up_to):
 
 
 def isWinner(x, nums):
+    """Prime game problem solution | main function"""
     if x < 1 or not nums:
         return None
     maria_wins = 0
